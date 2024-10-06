@@ -29,7 +29,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 // Run the Docker container
-                sh 'docker run -d -p 8090:8090 --name devops-project-container saifmbarki/devops-project-image:1.0.0'
+                sh 'docker run -d -p 8090:8080 --name devops-project-container saifmbarki/devops-project-image:1.0.0'
             }
         }
     }
