@@ -8,6 +8,11 @@ pipeline {
                 git 'https://github.com/saifmbarki/DevOpsProject.git'
             }
         }
+        stage('Build with Maven') {
+            steps {
+                sh 'mvn clean package -DskipTests'
+            }
+        }
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
