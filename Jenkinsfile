@@ -13,7 +13,17 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        
+        stage('Run Tests 100001') {
+            steps {
+                script {
+                    def result = sh(script: 'mvn test', returnStatus: true)
+                    if (result != 0) {
+                        currentBuild.result = 'UNSTABLE' // Mark the build as unstable
+                        echo "Tests failed, marking build as unstable."
+                    }
+                }
+            }
+        }
          stage('Run Tests') {
             steps {
                 sh 'mvn test' // Execute unit tests
@@ -40,6 +50,22 @@ pipeline {
                 // Run the Docker container
                 sh 'docker run -d -p 8090:8080 --name devops-project-container saifmbarki/devops-project-image:1.0.0'
             }
+        }
+    }
+    
+    
+     post {
+        always {
+            echo "This will run after the pipeline completes."
+        }
+        success {
+            echo "This will run only if the pipeline succeeds."
+        }
+        unstable {
+            echo "This will run if the build is unstable."
+        }
+        failure {
+            echo "This will run if the build fails."
         }
     }
 }
