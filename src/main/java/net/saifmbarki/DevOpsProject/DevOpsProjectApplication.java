@@ -15,6 +15,6 @@ public class DevOpsProjectApplication {
 	
 	@GetMapping("/")
 	public String hello() {
-		return "<h1> Cette application est deployer sur une instance ec2 aws avec un repo sur github, et une chaine cicd avec jenkins qui est aussi deployer sur ue instance ec2, a chaque fois ou il ya un changement dans le repo git, un build est executé, une image docker est creer, et une container docker est executer </h1> ";
+		return "<h1> creer une nouvelle branche, faire changement, push, et faire un PR </h1> ";
 }
 }
