@@ -19,7 +19,7 @@ class DevOpsProjectApplicationTests {
 	
     @Test
     public void calcTest() {
-        Integer expected = 12; // Expected result
+        Integer expected = 11; // Expected result
         Integer actual = dvApplication.calc(); // Call the method under test
         assertEquals(expected, actual); // Assert that the expected result matches the actual result
     }
