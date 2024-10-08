@@ -14,7 +14,7 @@ pipeline {
             }
         }
         stage('Run Tests 100001') {
-            steps {s
+            steps {
                 script {
                 	echo " ############## runing test now ......"
                     def result = sh(script: 'mvn test', returnStatus: true)
