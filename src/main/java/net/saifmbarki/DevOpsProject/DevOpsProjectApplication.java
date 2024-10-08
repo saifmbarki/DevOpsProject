@@ -15,6 +15,6 @@ public class DevOpsProjectApplication {
 	
 	@GetMapping("/")
 	public String hello() {
-		return "<h1> Devops Project: using java spring-boot maven jenkins ansible docker k8s and aws / lets try jenkins by saif mbarki// greate job";
+		return "<h1> Cette application est deployer sur une instance ec2 aws avec un repo sur github, et une chaine cicd avec jenkins qui est aussi deployer sur ue instance ec2, a chaque fois ou il ya un changement dans le repo git, un build est executé, une image docker est creer, et une container docker est executer </h1> ";
 }
 }
