@@ -17,7 +17,7 @@ public class DevOpsProjectApplication {
 	
 	@GetMapping("/")
 	public String hello() {
-		return "<h1> creer une nouvelle branche, faire changement, push, et faire un PR </h1> ";
+		return "<h1> creer une nouvelle branche, faire changement, push, et faire un PR : mvn clean package --skip-tetst</h1> ";
 	}
 	
 	
