@@ -10,12 +10,13 @@ pipeline {
         }
         stage('Build with Maven') {
             steps {
-                sh 'mvn clean package'
+                sh 'mvn clean package -DskipTests'
             }
         }
         stage('Run Tests 100001') {
-            steps {
+            steps {s
                 script {
+                	echo " ############## runing test now ......"
                     def result = sh(script: 'mvn test', returnStatus: true)
                     if (result != 0) {
                         currentBuild.result = 'UNSTABLE' // Mark the build as unstable
