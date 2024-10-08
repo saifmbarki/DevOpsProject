@@ -13,6 +13,14 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+        
+         stage('Run Tests') {
+            steps {
+                sh 'mvn test' // Execute unit tests
+                junit '**/target/surefire-reports/*.xml' // Adjust the path as needed for your project
+            }
+        }
+        
         stage('Build Docker Image') {
             steps {
                 // Build the Docker image
