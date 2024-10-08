@@ -18,4 +18,4 @@ This project demonstrates a CI/CD pipeline built using Jenkins deployed on an AW
 1. **Trigger**: The Jenkins pipeline is triggered whenever code is pushed to the repository.
 2. **Build with Maven**: The pipeline runs the following Maven commands to build the project:
    ```bash
-   mvn clean install
+   mvn clean package
