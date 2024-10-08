@@ -22,12 +22,8 @@ pipeline {
         stage('Stop and Remove Existing Container') {
             steps {
                 script {
-                    // Check if the container exists and stop/remove it if it does
-                    def containerExists = sh(script: "docker ps -a --filter 'name=devops-project-container' --format '{{.Names}}'", returnStdout: true).trim()
-                    if (containerExists == 'devops-project-container') {
                         sh 'docker stop devops-project-container || true'
                         sh 'docker rm devops-project-container || true'
-                    }
                 }
             }
         }
